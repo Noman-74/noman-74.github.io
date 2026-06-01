@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md Gausul Azam Noman | Civil & Transportation Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #f5f2ec;
+    --surface: #fffefb;
+    --ink: #1a1814;
+    --ink-muted: #6b6457;
+    --accent: #c8441a;
+    --accent-light: #f0ebe3;
+    --accent2: #2a4a6b;
+    --border: #ddd8cf;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(245,242,236,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 62px;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: .02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: .83rem; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--ink-muted); transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 62px;
+  }
+  .hero-left {
+    background: var(--accent2);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8vw 6vw 8vw 8vw;
+    position: relative; overflow: hidden;
+  }
+  .hero-left::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 60px solid rgba(255,255,255,.05);
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; bottom: -40px; left: 40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 40px solid rgba(200,68,26,.2);
+  }
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 1.2rem;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1.4rem;
+  }
+  .hero-name em { color: #f4b98c; font-style: italic; }
+  .hero-desc {
+    color: rgba(255,255,255,.75);
+    font-size: .97rem; line-height: 1.75;
+    max-width: 380px;
+    margin-bottom: 2.4rem;
+  }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 2.4rem; }
+  .badge {
+    font-size: .72rem; font-weight: 500; letter-spacing: .07em; text-transform: uppercase;
+    padding: .28rem .75rem;
+    border-radius: 2px;
+    background: rgba(255,255,255,.1);
+    color: rgba(255,255,255,.85);
+    border: 1px solid rgba(255,255,255,.15);
+  }
+  .badge.hot { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .45rem;
+    font-family: var(--sans); font-size: .82rem; font-weight: 600;
+    letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+    padding: .7rem 1.6rem; border-radius: 2px;
+    transition: all .22s;
+    cursor: pointer; border: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #a83614; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.4); }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+  .hero-right {
+    background: var(--surface);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8vw 8vw 8vw 6vw;
+  }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+  .stat-box {
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.2rem;
+    border-radius: 4px;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.4rem; color: var(--accent2); line-height: 1;
+    margin-bottom: .3rem;
+  }
+  .stat-label { font-size: .75rem; color: var(--ink-muted); letter-spacing: .06em; text-transform: uppercase; }
+  .contact-list { display: flex; flex-direction: column; gap: .75rem; }
+  .contact-item { display: flex; align-items: center; gap: .75rem; font-size: .88rem; color: var(--ink-muted); }
+  .contact-item a { color: var(--accent2); text-decoration: none; }
+  .contact-item a:hover { text-decoration: underline; }
+  .c-icon { font-size: 1rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 8vw; }
+  section:nth-child(even) { background: var(--surface); }
+
+  .sec-label {
+    font-family: var(--mono);
+    font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: .6rem;
+  }
+  .sec-title {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    color: var(--ink); line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+  .sec-title span { color: var(--accent2); font-style: italic; }
+
+  /* ── EDUCATION ── */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .edu-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    background: var(--bg);
+    position: relative; overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .edu-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+  .edu-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  }
+  .edu-card.current::before { background: var(--accent); }
+  .edu-card.past::before { background: var(--accent2); }
+  .edu-degree {
+    font-family: var(--serif); font-size: 1.2rem;
+    color: var(--ink); margin-bottom: .3rem;
+  }
+  .edu-uni { font-weight: 600; font-size: .92rem; color: var(--accent2); margin-bottom: .2rem; }
+  .edu-meta { font-size: .8rem; color: var(--ink-muted); margin-bottom: 1rem; }
+  .gpa-pill {
+    display: inline-block;
+    font-family: var(--mono); font-size: .78rem; font-weight: 500;
+    padding: .22rem .7rem; border-radius: 2px;
+    background: var(--accent-light); color: var(--accent);
+    border: 1px solid #e8c9b8;
+    margin-bottom: .5rem;
+  }
+  .edu-sub { font-size: .8rem; color: var(--ink-muted); }
+
+  /* ── RESEARCH ── */
+  .pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .pub-card {
+    border-left: 3px solid var(--accent2);
+    padding: 1.4rem 1.6rem;
+    background: var(--bg);
+    border-radius: 0 6px 6px 0;
+    transition: border-color .2s;
+  }
+  .pub-card:hover { border-color: var(--accent); }
+  .pub-title { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: .4rem; }
+  .pub-authors { font-size: .82rem; color: var(--ink-muted); margin-bottom: .5rem; font-style: italic; }
+  .pub-venue {
+    font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: .6rem;
+  }
+  .pub-link {
+    font-family: var(--mono); font-size: .74rem;
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px dashed var(--accent);
+  }
+  .pub-link:hover { border-bottom-style: solid; }
+
+  /* ── SKILLS ── */
+  .skills-wrapper { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+  .skill-group-title {
+    font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .skill-tag {
+    font-size: .8rem; font-weight: 500;
+    padding: .32rem .85rem; border-radius: 3px;
+    background: var(--accent-light);
+    color: var(--accent2);
+    border: 1px solid var(--border);
+    transition: background .2s;
+  }
+  .skill-tag:hover { background: #e2d9cc; }
+
+  /* ── EXPERIENCE ── */
+  .exp-timeline { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 2rem; padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-date {
+    font-family: var(--mono); font-size: .78rem;
+    color: var(--ink-muted); padding-top: .2rem;
+    line-height: 1.5;
+  }
+  .exp-role { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: .2rem; }
+  .exp-org { font-size: .85rem; font-weight: 600; color: var(--accent2); margin-bottom: .75rem; }
+  .exp-duties { list-style: none; display: flex; flex-direction: column; gap: .35rem; }
+  .exp-duties li { font-size: .88rem; color: var(--ink-muted); padding-left: 1.1rem; position: relative; }
+  .exp-duties li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: .8rem; }
+
+  /* ── CAPSTONE ── */
+  .capstone-box {
+    background: var(--accent2);
+    color: #fff;
+    border-radius: 8px;
+    padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .capstone-box::after {
+    content: '';
+    position: absolute; bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%; border: 50px solid rgba(255,255,255,.05);
+  }
+  .capstone-label {
+    font-family: var(--mono); font-size: .7rem; letter-spacing: .15em;
+    text-transform: uppercase; color: #f4b98c; margin-bottom: .7rem;
+  }
+  .capstone-title { font-family: var(--serif); font-size: 1.5rem; color: #fff; margin-bottom: 1rem; line-height: 1.3; }
+  .capstone-desc { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.75; }
+  .capstone-right { display: flex; flex-direction: column; gap: 1rem; }
+  .cap-item-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.45); margin-bottom: .2rem; }
+  .cap-item-val { font-size: .9rem; color: rgba(255,255,255,.85); }
+  .cap-skills-wrap { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .3rem; }
+  .cap-skill { font-size: .72rem; padding: .18rem .6rem; border-radius: 2px; background: rgba(255,255,255,.1); color: rgba(255,255,255,.75); }
+  .doi-link { font-family: var(--mono); font-size: .75rem; color: #f4b98c; text-decoration: none; }
+
+  /* ── AWARDS ── */
+  .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .award-card {
+    border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.5rem;
+    background: var(--surface);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .award-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+  .award-icon { font-size: 1.6rem; margin-bottom: .7rem; }
+  .award-name { font-family: var(--serif); font-size: 1rem; color: var(--ink); margin-bottom: .3rem; }
+  .award-year { font-family: var(--mono); font-size: .75rem; color: var(--ink-muted); }
+
+  /* ── REFERENCES ── */
+  .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .ref-card {
+    border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.8rem;
+    background: var(--bg);
+  }
+  .ref-name { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: .2rem; }
+  .ref-title { font-size: .83rem; color: var(--ink-muted); margin-bottom: .6rem; }
+  .ref-email { font-family: var(--mono); font-size: .78rem; color: var(--accent2); text-decoration: none; }
+  .ref-rel { font-size: .78rem; color: var(--accent); font-style: italic; margin-top: .4rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: .8rem;
+    font-family: var(--mono);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp .6s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: .1s; }
+  .hero-left > *:nth-child(2) { animation-delay: .22s; }
+  .hero-left > *:nth-child(3) { animation-delay: .34s; }
+  .hero-left > *:nth-child(4) { animation-delay: .46s; }
+  .hero-left > *:nth-child(5) { animation-delay: .58s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .edu-grid, .skills-wrapper, .awards-grid, .ref-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: .5rem; }
+    .capstone-box { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Noman</a>
+  <ul class="nav-links">
+    <li><a href="#education">Education</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Graduate Research Assistant · DalTRAC · Dalhousie University</div>
+    <h1 class="hero-name">Md Gausul<br><em>Azam Noman</em></h1>
+    <p class="hero-desc">
+      MASc candidate in Civil & Resource Engineering at Dalhousie University.
+      Researching transportation safety, machine learning, and urban mobility —
+      with peer-reviewed publications and a passion for data-driven solutions.
+    </p>
+    <div class="hero-badges">
+      <span class="badge hot">Transportation Engineering</span>
+      <span class="badge">Machine Learning</span>
+      <span class="badge">Road Safety</span>
+      <span class="badge">Deep Learning</span>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:wd475880@dal.ca">✉ Get in Touch</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/gausul-azam-noman" target="_blank">LinkedIn →</a>
+    </div>
+  </div>
+  <div class="hero-right" id="contact">
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-num">4.15</div>
+        <div class="stat-label">GPA / 4.3 — Dal</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Publications</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">TRB</div>
+        <div class="stat-label">105th Annual Meeting</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2025</div>
+        <div class="stat-label">Started at Dalhousie</div>
+      </div>
+    </div>
+    <div class="contact-list">
+      <div class="contact-item"><span class="c-icon">✉</span><a href="mailto:wd475880@dal.ca">wd475880@dal.ca</a></div>
+      <div class="contact-item"><span class="c-icon">📞</span><span>902-412-1856</span></div>
+      <div class="contact-item"><span class="c-icon">📍</span><span>Halifax, Nova Scotia, Canada</span></div>
+      <div class="contact-item"><span class="c-icon">🔗</span><a href="https://www.linkedin.com/in/gausul-azam-noman" target="_blank">LinkedIn: Gausul Azam Noman</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-label">Academic Background</div>
+  <h2 class="sec-title">Education &amp; <span>Credentials</span></h2>
+  <div class="edu-grid">
+    <div class="edu-card current">
+      <div class="edu-degree">Master of Applied Science</div>
+      <div class="edu-uni">Dalhousie University</div>
+      <div class="edu-meta">Civil and Resource Engineering · Halifax, Canada · Sep 2025 – Present</div>
+      <div class="gpa-pill">GPA 4.15 / 4.3</div>
+      <div class="edu-sub">Graduate Research Assistant at DalTRAC Lab</div>
+    </div>
+    <div class="edu-card past">
+      <div class="edu-degree">Bachelor of Science in Civil Engineering</div>
+      <div class="edu-uni">Bangladesh University of Engineering and Technology (BUET)</div>
+      <div class="edu-meta">Dhaka, Bangladesh · Graduated May 2023</div>
+      <div class="gpa-pill">GPA 3.83 / 4.0</div>
+      <div class="edu-sub">Major: Transportation Engineering &nbsp;·&nbsp; Minor: Geotechnical Engineering</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="sec-label">Peer-Reviewed Work</div>
+  <h2 class="sec-title">Research &amp; <span>Publications</span></h2>
+  <div class="pub-list">
+    <div class="pub-card">
+      <div class="pub-title">Artificial Intelligence-based Perceived Motorcycle Risk Prediction in Bangladesh's Urban Driving Environment</div>
+      <div class="pub-authors">G. A. Noman, Md. M. Tahmid, Dr. Md. A. Raihan, Dr. Md. S. Hoque</div>
+      <div class="pub-venue">Lecture Notes in Civil Engineering (LNCE, Volume 512) · Springer</div>
+      <a class="pub-link" href="https://doi.org/10.1007/978-3-031-63280-8_39" target="_blank">doi.org/10.1007/978-3-031-63280-8_39 ↗</a>
+    </div>
+    <div class="pub-card">
+      <div class="pub-title">Perceived Motorcycle Risk Prediction Using Structural Equation Modeling and Artificial Intelligence in the Urban Driving Environment of Bangladesh</div>
+      <div class="pub-authors">Md. M. Tahmid, G. A. Noman, Akib Mahmud</div>
+      <div class="pub-venue">4th International Electronic Conference on Applied Sciences · MDPI Sciforum</div>
+      <a class="pub-link" href="https://sciforum.net/paper/view/15919" target="_blank">sciforum.net/paper/view/15919 ↗</a>
+    </div>
+    <div class="pub-card">
+      <div class="pub-title">Differential Analysis of Discerned Motorcycle Risk Factors on Traffic Control and Law in Developing Country's Urban Context</div>
+      <div class="pub-authors">G. A. Noman, Md. M. Tahmid, Dr. Md. A. Raihan, A. Mahmud, Dr. Md. S. Hoque</div>
+      <div class="pub-venue">Traffic Injury Prevention · Accepted at TRB 105th Annual Meeting</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-label">Professional History</div>
+  <h2 class="sec-title">Work <span>Experience</span></h2>
+  <div class="exp-timeline">
+    <div class="exp-item">
+      <div class="exp-date">Sep 2025 – Present<br>Halifax, Canada</div>
+      <div>
+        <div class="exp-role">Graduate Research Assistant</div>
+        <div class="exp-org">Dalhousie Transportation Collaboratory (DalTRAC), Dalhousie University</div>
+        <ul class="exp-duties">
+          <li>Cleaned and prepared large datasets with high accuracy</li>
+          <li>Analyzed data using statistical and machine learning techniques</li>
+          <li>Assisted in documentation and reporting of research findings</li>
+          <li>Supported lab safety by following proper protocols for equipment handling</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">Jan 2026 – Present<br>Halifax, Canada</div>
+      <div>
+        <div class="exp-role">Assistant Invigilator – STAT 1060 Midterm</div>
+        <div class="exp-org">Dalhousie University</div>
+        <ul class="exp-duties">
+          <li>Assisted in exam setup, including distribution of question papers and materials</li>
+          <li>Monitored students during the examination to ensure academic integrity</li>
+          <li>Responded to student queries and supported the instructor during the exam</li>
+          <li>Followed university protocols for exam procedures and unexpected situations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">Dec 2025 – Present<br>Halifax, Canada</div>
+      <div>
+        <div class="exp-role">Assistant Invigilator</div>
+        <div class="exp-org">Registrar's Office, Dalhousie University</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-date">Oct – Dec 2025<br>Antigonish, Canada</div>
+      <div>
+        <div class="exp-role">Course Marker – ENGR 211: Thermo-Fluids</div>
+        <div class="exp-org">St. Francis Xavier University</div>
+        <ul class="exp-duties">
+          <li>Marked undergraduate assignments and problem sets accurately and fairly</li>
+          <li>Provided clear, constructive written feedback to help students improve</li>
+          <li>Communicated with course instructor regarding student performance and grading issues</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPSTONE -->
+<section>
+  <div class="sec-label">Undergraduate Project</div>
+  <h2 class="sec-title">Capstone <span>Project</span></h2>
+  <div class="capstone-box">
+    <div>
+      <div class="capstone-label">May 2022 – Feb 2023 · BUET, Bangladesh</div>
+      <div class="capstone-title">Development of Multipurpose Complex &amp; Improvement of BUET Playground</div>
+      <p class="capstone-desc">
+        Designed a 20,000 sqm sports complex ensuring safety, efficiency, and sustainability.
+        Conducted Traffic Impact Analysis, reinforced concrete and swimming pool structural design.
+      </p>
+    </div>
+    <div class="capstone-right">
+      <div>
+        <div class="cap-item-label">Supervisors</div>
+        <div class="cap-item-val">Dr. Raquib Ahsan · Dr. Md. Ferdous Alam<br>Dr. Md. Shamsul Hoque · Dr. Sheikh Mokhlesur Rahman</div>
+      </div>
+      <div>
+        <div class="cap-item-label">Skills Used</div>
+        <div class="cap-skills-wrap">
+          <span class="cap-skill">AutoCAD</span><span class="cap-skill">ETABS</span>
+          <span class="cap-skill">TIA</span><span class="cap-skill">EIA</span>
+          <span class="cap-skill">Structural Design</span><span class="cap-skill">Geotechnical Analysis</span>
+          <span class="cap-skill">Financial Analysis</span>
+        </div>
+      </div>
+      <div>
+        <div class="cap-item-label">DOI</div>
+        <a class="doi-link" href="http://dx.doi.org/10.13140/RG.2.2.24250.57281/1" target="_blank">dx.doi.org/10.13140/RG.2.2.24250.57281/1 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">Toolbox</div>
+  <h2 class="sec-title">Technical <span>Skills</span></h2>
+  <div class="skills-wrapper">
+    <div>
+      <div class="skill-group-title">Engineering Software</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AutoCAD</span><span class="skill-tag">SketchUp</span>
+        <span class="skill-tag">CSI ETABS</span><span class="skill-tag">SAP 2000</span>
+        <span class="skill-tag">Visual Studio</span><span class="skill-tag">SPSS</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group-title">Programming</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Deep Learning</span><span class="skill-tag">C++</span>
+        <span class="skill-tag">MATLAB</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group-title">General Software</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MS Word</span><span class="skill-tag">MS Excel</span>
+        <span class="skill-tag">MS PowerPoint</span>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Bengali (Native)</span>
+        <span class="skill-tag">English (Proficient)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="sec-label">Recognition</div>
+  <h2 class="sec-title">Awards &amp; <span>Achievements</span></h2>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-icon">🎓</div>
+      <div class="award-name">FGS Department Allocation Scholarship</div>
+      <div class="award-year">Sep 2025 – Aug 2026 · Dalhousie University</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div class="award-name">Champion — Poster Presentation</div>
+      <div class="award-year">March 2023 · Cennovation 2023, IUT, Dhaka</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🌟</div>
+      <div class="award-name">Technical Scholarship</div>
+      <div class="award-year">2018 – 2023 · BUET</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">📋</div>
+      <div class="award-name">Dean's List Award</div>
+      <div class="award-year">2023 · BUET</div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section>
+  <div class="sec-label">Academic References</div>
+  <h2 class="sec-title">References</h2>
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-name">Dr. Ahsan Habib</div>
+      <div class="ref-title">Professor, Department of Civil and Resource Engineering<br>Dalhousie University</div>
+      <a class="ref-email" href="mailto:ahsan.habib@dal.ca">ahsan.habib@dal.ca</a>
+      <div class="ref-rel">Thesis Supervisor</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-name">Dr. Frank Comeau</div>
+      <div class="ref-title">Associate Professor, Department of Engineering<br>St. Francis Xavier University</div>
+      <a class="ref-email" href="mailto:fcomeau@stfx.ca">fcomeau@stfx.ca</a>
+      <div class="ref-rel">Supervisor (Marker)</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Md Gausul Azam Noman · Dalhousie University · Halifax, Nova Scotia
+</footer>
+
+</body>
+</html>
